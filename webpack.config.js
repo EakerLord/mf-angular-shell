@@ -12,7 +12,8 @@ module.exports = withModuleFederationPlugin({
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({ singleton: true, strictVersion: false }),
+    // ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
   },
 
 });

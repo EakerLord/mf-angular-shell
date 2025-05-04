@@ -4,12 +4,12 @@ import { loadRemoteModule} from "@angular-architects/module-federation";
 export const routes: Routes = [
   {
     path: 'a16',
-    loadComponent: () =>
+    loadChildren: () =>
       loadRemoteModule({
         type:'module',
         remoteEntry:'http://localhost:4202/remoteEntry.js',
-        exposedModule:'./AppComponent',
-      }).then((m)=> m.AppComponent)
+        exposedModule:'./AppModule',
+      }).then((m)=> m.AppModule)
   },
   {
     path:'a19',
