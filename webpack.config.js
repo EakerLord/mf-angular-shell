@@ -6,7 +6,7 @@ module.exports = withModuleFederationPlugin({
 
   name: 'mf-angular-shell',
 
-  exposes: {
+  remotes: {
     mfAngular16: "http://localhost:4202/remoteEntry.js",
     mfAngular19: "http://localhost:4201/remoteEntry.js",
   },
