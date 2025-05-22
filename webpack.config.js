@@ -11,6 +11,10 @@ module.exports = withModuleFederationPlugin({
     mfAngular19: "http://localhost:4201/remoteEntry.js",
   },
 
+  exposes: {
+  './PlacesService': './src/services/places.service.ts',
+  },
+
   shared: {
     ...shareAll({ singleton: true, strictVersion: false }),
     // ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),

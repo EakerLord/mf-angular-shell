@@ -1,0 +1,23 @@
+Pasos en el Host
+----------------
+1) Crear el servicio e instanciarlo en el app.componen.ts
+
+2) Exponerlo en el webpack.config.js:
+	-> exposes: {'./PlacesService': './src/services/places.service.ts'}
+
+3) En el tsconfig.json incluir:
+	-> "include": ["src/**/*.ts"]
+
+Pasos en el Remote
+------------------
+
+4) Crear el archivo ./src/decl.d.ts
+	-> declare module 'host/PlacesService' {
+	->  import { PlacesService } from 'src/services/places.service'; // host service path
+	->  export { PlacesService };
+	-> }
+
+5) En el tsconfig.json incluir:
+	-> "include": ["src/**/*.ts", "src/decl.d.ts"]
+
+6) Uso del servicio en el componente destino.
